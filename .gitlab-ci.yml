@@ -1,0 +1,31 @@
+stages:
+    - build
+    - test
+    - deploy
+
+build-job:
+    stage: build
+    image: node:14
+    script:
+        - echo "Building..."
+        - echo "Done!"
+    only:
+        - main
+
+test-job:
+    stage: test
+    image: node:14
+    script:
+        - echo "Testing..."
+        - echo "Done!"
+    only:
+        - main
+
+deploy-job:
+    stage: deploy
+    image: node:14
+    script:
+        - echo "Deploying..."
+        - echo "Done!"
+    only:
+        - main
