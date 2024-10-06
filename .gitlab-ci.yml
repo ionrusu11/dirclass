@@ -11,7 +11,7 @@ build-job:
 test-job:
     stage: test
     script:
-        - docker run --rm dirclass:v1 npm run test
+        - docker run --rm dirclass:v1 bash -c "CI=true npm run test"
 
 deploy-job:
     stage: deploy
