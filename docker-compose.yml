@@ -5,7 +5,7 @@ services:
         restart: unless-stopped
         labels:
             - 'traefik.enable=true'
-            - 'traefik.http.routers.dirclass.rule=Host(`admin.coin-evolution.com`)'
+            - 'traefik.http.routers.dirclass.rule=Host(`ionrusu114.pro`)'
             - 'traefik.http.services.dirclass.loadbalancer.server.port=3005'
         environment:
             HOST: '0.0.0.0'
