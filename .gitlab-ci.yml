@@ -5,27 +5,15 @@ stages:
 
 build-job:
     stage: build
-    image: node:14
     script:
-        - echo "Building..."
-        - echo "Done!"
-    only:
-        - main
+        - docker build -t dirclass:v1 .
 
 test-job:
     stage: test
-    image: node:14
     script:
-        - echo "Testing..."
-        - echo "Done!"
-    only:
-        - main
+        - docker run --rm dirclass:v1 npm run test -s -v
 
 deploy-job:
     stage: deploy
-    image: node:14
     script:
-        - echo "Deploying..."
-        - echo "Done!"
-    only:
-        - main
+        - docker compose up -d
