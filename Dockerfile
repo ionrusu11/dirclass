@@ -27,5 +27,5 @@ ENV HOST=localhost PORT=3005
 
 
 # run the build project with node
-ENTRYPOINT ["node", ".output/server/index.mjs"]
+CMD ["node", ".output/server/index.mjs"]
 # ENTRYPOINT ["npm", "run", "start"]
