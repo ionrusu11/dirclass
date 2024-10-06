@@ -3,8 +3,10 @@ services:
         image: dirclass:v1
         container_name: dirclass
         restart: unless-stopped
-        ports:
-            - '127.0.0.1:3005:3005'
+        labels:
+            - 'traefik.enable=true'
+            - 'traefik.http.routers.dirclass.rule=Host(`admin.coin-evolution.com`)'
+            - 'traefik.http.services.dirclass.loadbalancer.server.port=3005'
         environment:
             HOST: '0.0.0.0'
             PORT: 3005
@@ -12,3 +14,8 @@ services:
             - dirclass_data:/data
 volumes:
     dirclass_data:
+
+networks:
+    default:
+        name: proxynet
+        external: true
