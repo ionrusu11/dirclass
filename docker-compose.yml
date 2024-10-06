@@ -10,6 +10,7 @@ services:
         environment:
             HOST: '0.0.0.0'
             PORT: 3005
+
         volumes:
             - dirclass_data:/data
 volumes:
